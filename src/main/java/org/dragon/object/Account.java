@@ -17,8 +17,7 @@ public class Account {
     }
 
     public void setBalance(double balance) {
-        this.balance = balance;
-        this.balance = Double.parseDouble(String.format("%.2f", this.balance));
+        this.balance = Double.parseDouble(String.format("%.2f", balance));
     }
 
     public void addBalance(double val) {
