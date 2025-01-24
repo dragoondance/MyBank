@@ -32,6 +32,6 @@ public class Debt {
     }
 
     public void setAmount(double amount) {
-        this.amount = Double.parseDouble(String.format("%.2f", this.amount + amount));
+        this.amount = Double.parseDouble(String.format("%.2f", amount));
     }
 }

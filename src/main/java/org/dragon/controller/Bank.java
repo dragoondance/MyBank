@@ -16,6 +16,14 @@ public class Bank {
 
     private Account activeAccount;
 
+    public Account getActiveAccount() {
+        return activeAccount;
+    }
+
+    public List<Debt> getDebtList() {
+        return debtList;
+    }
+
     public void displayInstruction() {
         System.out.println(Resources.LIST_OF_COMMAND);
         if (activeAccount == null) {
@@ -103,7 +111,7 @@ public class Bank {
         // until debt amount is 0 or amount is 0 whichever come first
         for (Debt d: currentDebts) {
             Account targetAccount = accounts.get(d.getTarget());
-            if (d.getAmount() <= amount) {
+            if (d.getAmount() <= tempAmount) {
                 tempAmount = Double.parseDouble(String.format("%.2f", tempAmount - d.getAmount()));
                 System.out.println(Resources.TRANSFERREDTO.formatted(d.getAmount(), d.getTarget()));
                 targetAccount.addBalance(d.getAmount());
