@@ -45,5 +45,7 @@ public class AutomationTest {
         bank.deposit(100);
         assertEquals(90, bank.getActiveAccount().getBalance());
         bank.logout();
+        bank.login("alice");
+        assertEquals(220, bank.getActiveAccount().getBalance());
     }
 }
